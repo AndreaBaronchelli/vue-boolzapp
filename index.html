@@ -16,7 +16,74 @@
     <title>Boolzapp</title>
 </head>
 <body>
-    
+    <!-- APP / VUE ENTRY -->
+    <div class="container" id="app">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <!-- Header -->
+            <header class="app-headers">
+                <div class="header-left">
+                    <div class="avatar">
+                        <img src="./img/avatar_8.jpg" alt="Your Avatar">
+                    </div>
+                    <div class="username">Nome Utente</div>
+                </div>
+                <div class="header-right c-grey">
+                    <ul>
+                        <li><a href="#"><i class="fas fa-circle-notch"></i></a></li>
+                        <li><a href="#"><i class="fas fa-comment-alt"></i></a></li>
+                        <li><a href="#"><i class="fas fa-ellipsis-v"></i></a></li>
+                    </ul>
+                </div>
+            </header>
+            <!-- Notification -->
+            <div class="notification">
+                <i class="fas fa-bell-slash"></i>
+                <div class="notification-text">
+                    <div class="b">Ricevi notifiche di nuovi messaggi</div>
+                    <a href="#" class="fs-12 b c-darkgrey unline">Attiva notifiche desktop</a>
+                </div>
+            </div>
+            <!-- Search -->
+            <div class="search c-grey">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <input type="text" class="fs-12" placeholder="Cerca o inizia una nuova chat">
+            </div>
+            <!-- Chat List -->
+            <div class="chat-list">
+                <ul>
+                    <li v-for="(contact, index) in contacts">
+                        <div class="avatar">
+                            <img :src="'./img/avatar' + contact.avatar +'.jpg'" :alt="'contact.name' + Avatar">
+                        </div>
+                        <div class="username">{{contact.name}}</div>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            <header class="app-headers">
+                <div class="header-left">
+                    <div class="avatar">
+                        <img src="./img/avatar_1.jpg" alt="Michele Avatar">
+                    </div>
+                    <div class="info">
+                        <div class="username">Michele</div>
+                        <div class="last-access c-grey fs-12 b">Ultimo accesso oggi alle 10.35</div>
+                    </div>
+                </div>
+                <div class="header-right c-grey">
+                    <ul>
+                        <li><a href="#"><i class="fas fa-search"></i></a></li>
+                        <li><a href="#"><i class="fas fa-paperclip"></i></a></li>
+                        <li><a href="#"><i class="fas fa-ellipsis-v"></i></a></li>
+                    </ul>
+                </div>
+            </header>
+        </main>
+    </div>
+
     <!-- JS -->
     <script src="./js/script.js"></script>
 </body>
