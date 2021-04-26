@@ -89,8 +89,14 @@ const app = new Vue({
                     status: 'received'
                 }
             ],
-        },
-    ],
-        },
-    
+        }],
+        contactIndex: 0,
+    },
+    methods: {
+        setContact(index) {
+            this.contactIndex = index;
+            console.log(this.contactIndex);
+
+        }
+    },
     });
