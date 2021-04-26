@@ -124,6 +124,8 @@ const app = new Vue({
             this.contacts.forEach(contact => {
                 if (! contact.name.toLowerCase().includes(this.searchModel.toLowerCase())) {
                    contact.visible = false 
+                } else {
+                   contact.visible = true 
                 }
             });
         }
