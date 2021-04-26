@@ -91,12 +91,32 @@ const app = new Vue({
             ],
         }],
         contactIndex: 0,
+        newMessage: "",
     },
     methods: {
         setContact(index) {
             this.contactIndex = index;
-            console.log(this.contactIndex);
+        },
+        addNewMessage() {
+            if (this.newMessage != "") {
+                this.contacts[this.contactIndex].messages.push({
+                    date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+                    message: this.newMessage,
+                    status: 'sent',
+                })
+            };
 
+            // reset form
+            this.newMessage = ""
+            
+            // Autoresponder
+            setTimeout(() => {
+                this.contacts[this.contactIndex].messages.push({
+                    date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+                    message: "ok",
+                    status: 'received',
+                })
+            }, 1000);
         }
     },
     });

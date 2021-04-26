@@ -99,13 +99,19 @@
             <!-- Chat Footer -->
             <footer class="chat-footer c-darkgrey">
                 <a href="#"><i><i class="far fa-smile"></i></i></a>
-                <input type="text" placeholder="Scrivi un messaggio">
+                <input 
+                type="text" 
+                placeholder="Scrivi un messaggio"
+                @keyup.enter="addNewMessage()"
+                v-model.trim="newMessage"
+                >
                 <a href="#"><i><i class="fas fa-microphone"></i></i></a>
             </footer>
         </main>
     </div>
 
     <!-- JS -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js' integrity='sha512-0fcCRl828lBlrSCa8QJY51mtNqTcHxabaXVLPgw/jPA5Nutujh6CbTdDgRzl9aSPYW/uuE7c4SffFUQFBAy6lg==' crossorigin='anonymous'></script>
     <script src="./js/script.js"></script>
 </body>
 </html>

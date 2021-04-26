@@ -55,7 +55,9 @@ a {
 
 /* Message */
 .message {
-    width: 30%;
+    display: flex;
+    flex-direction: column;
+    width: 45%;
     margin-bottom: 10px;
     border-radius: 10px;
 }
@@ -67,13 +69,17 @@ a {
 
 .message.received {
     background: #fff;
+    align-self: flex-start;
 }
 
 .message .text {
-    padding: 15px 0 5px 20px;
+    height: 100%;
+    justify-self: center;
+    padding: 15px 10px 10px;
 }
 
 .message .info {
+    align-self: flex-end;
     padding: 5px;
     padding-top: 0;
     font-size: 10px;
@@ -175,6 +181,7 @@ a {
 
 /* Chat List */
 .chat-list {
+    overflow-y: auto;
     flex-grow: 1;
     background: #fff;
 }
@@ -229,6 +236,7 @@ a {
 /* Main Chat */
 .main-content .main-chat {
     flex-grow: 1;
+    overflow-y: auto;
     background-image: url(../img/mine.jpg);
 }
 
