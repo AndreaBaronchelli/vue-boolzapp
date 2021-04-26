@@ -92,6 +92,8 @@ const app = new Vue({
         }],
         contactIndex: 0,
         newMessage: "",
+        searchModel:"",
+        filteredContacts: [],
     },
     methods: {
         setContact(index) {
@@ -117,6 +119,13 @@ const app = new Vue({
                     status: 'received',
                 })
             }, 1000);
+        },
+        search() {
+            this.contacts.forEach(contact => {
+                if (! contact.name.toLowerCase().includes(this.searchModel.toLowerCase())) {
+                   contact.visible = false 
+                }
+            });
         }
     },
-    });
+});

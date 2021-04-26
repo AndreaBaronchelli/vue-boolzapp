@@ -47,7 +47,12 @@
             <!-- Search -->
             <div class="search c-grey">
                 <a href="#"><i class="fas fa-search"></i></a>
-                <input type="text" class="fs-12" placeholder="Cerca o inizia una nuova chat">
+                <input 
+                type="text" 
+                class="fs-12" 
+                placeholder="Cerca o inizia una nuova chat"
+                v-model.trim="searchModel"
+                @keyup="search">
             </div>
             <!-- Chat List -->
             <div class="chat-list">
@@ -55,8 +60,9 @@
                     <li 
                     v-for="(contact, index) in contacts"
                     :class="{ active: index == contactIndex}"
-                    ref="contacts"
-                    @click="setContact(index)">
+                    @click="setContact(index)"
+                    v-show="contact.visible == true"
+                    >
                         <div class="avatar">
                             <img :src="'./img/avatar' + contact.avatar +'.jpg'" :alt="contact.name + 'Avatar'">
                         </div>
