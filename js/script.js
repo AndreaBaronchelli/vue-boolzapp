@@ -93,7 +93,7 @@ const app = new Vue({
         contactIndex: 0,
         newMessage: "",
         searchModel:"",
-        filteredContacts: [],
+
     },
     methods: {
         setContact(index) {
@@ -105,20 +105,18 @@ const app = new Vue({
                     date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
                     message: this.newMessage,
                     status: 'sent',
-                })
-            };
+                });
+                setTimeout(() => {
+                    this.contacts[this.contactIndex].messages.push({
+                        date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+                        message: "ok",
+                        status: 'received',
+                    })
+                }, 1000);
+            } 
 
             // reset form
             this.newMessage = ""
-            
-            // Autoresponder
-            setTimeout(() => {
-                this.contacts[this.contactIndex].messages.push({
-                    date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
-                    message: "ok",
-                    status: 'received',
-                })
-            }, 1000);
         },
         search() {
             this.contacts.forEach(contact => {
