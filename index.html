@@ -61,7 +61,7 @@
                     v-for="(contact, index) in contacts"
                     :class="{ active: index == contactIndex}"
                     @click="setContact(index)"
-                    v-show="contact.visible == true"
+                    v-show="contact.visible"
                     >
                         <div class="avatar">
                             <img :src="'./img/avatar' + contact.avatar +'.jpg'" :alt="contact.name + 'Avatar'">
